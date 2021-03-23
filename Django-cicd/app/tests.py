@@ -31,5 +31,5 @@ class ViewTest(TestCase):
     def test_about(self):
         """Tests the about page."""
         response = self.client.get('/about/')
-        #self.assertContains(response, 'About', 3, 200)
-        self.assertEqual('22222'.upper(), 'FOO')
+        self.assertContains(response, 'About', 3, 200)
+        #self.assertEqual('22222'.upper(), 'FOO')

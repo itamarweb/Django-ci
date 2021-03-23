@@ -29,5 +29,5 @@ jobs:
       env:
         CC_TEST_REPORTER_ID: 49a5cba12304aeae64c950b19823d0339d165a6f40057faefab40970483a69a4
       with:
-        coverageCommand: coverage run
+        coverageCommand: coverage run Django-cicd/app/tests.py
         debug: true

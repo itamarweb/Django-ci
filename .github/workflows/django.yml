@@ -24,10 +24,11 @@ jobs:
     - name: Run Tests
       run: |
         python Django-cicd/manage.py test app
+        coverage run Django-cicd/app/tests.py
     - name: Test & publish code coverage
       uses: paambaati/codeclimate-action@v2.7.5
       env:
         CC_TEST_REPORTER_ID: 49a5cba12304aeae64c950b19823d0339d165a6f40057faefab40970483a69a4
       with:
-        coverageCommand: coverage run Django-cicd/app/tests.py
+        coverageCommand: coverage report
         debug: true

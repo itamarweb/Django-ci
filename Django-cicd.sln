@@ -1,0 +1,25 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.30804.86
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{888888A0-9F3D-457C-B088-3A5042F75D52}") = "Django-cicd", "Django-cicd\Django-cicd.pyproj", "{55B67118-4893-44CD-943A-B0FD45F82999}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{55B67118-4893-44CD-943A-B0FD45F82999}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{55B67118-4893-44CD-943A-B0FD45F82999}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{55B67118-4893-44CD-943A-B0FD45F82999}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{55B67118-4893-44CD-943A-B0FD45F82999}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {2965B253-795F-4D4E-9C7C-EFF22E3BC44E}
+	EndGlobalSection
+EndGlobal

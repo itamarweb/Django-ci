@@ -22,4 +22,4 @@ jobs:
         pip install -r Django-cicd/requirements.txt
     - name: Run Tests
       run: |
-        python Django-cicd/manage.py test Django_cicd
+        python Django-cicd/manage.py test app

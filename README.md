@@ -39,7 +39,7 @@ jobs:
     runs-on: ubuntu-latest
     steps:
     - uses: actions/checkout@v2
-    - name: Set up Python 3.8
+    - name: Set up Python 3.9
       uses: actions/setup-python@v2
       with:
         python-version: 3.9
@@ -47,7 +47,6 @@ jobs:
       run: |
         python -m pip install --upgrade pip
         pip install -r Django-cicd/requirements.txt
-        pip install coverage
     - name: Run Tests
       run: |
         python Django-cicd/manage.py test app
@@ -84,8 +83,92 @@ to:
  - click on it and then click on the box with "build" on it.
  - Search the failuire reasone. It sould look lik this:
  ![fail image from github](https://github.com/itamarweb/Django-ci/raw/master/FailTest.jpg) 
- - 
+## 13. Do Steps 10, 11, 12 again but change the commant
+revert step 10 so that the "bad" test will be commented
+```
+    def test_about(self):
+        """Tests the about page."""
+        response = self.client.get('/about/')
+        self.assertContains(response, 'About', 3, 200)
+        #self.assertEqual('22222'.upper(), 'FOO')
+```
+and do a pull-stage-commit-push to see the results:
+
+![pass tests image from githu](https://github.com/itamarweb/Django-ci/raw/master/PassTest.jpg)
 
 
-##
+## 14. Chillout have a drink and keep on coding!
+
+
+# Understanding the workflow
+
+next is the explanation of the workflow yaml file statement by statement.
+
+
+```
+name: Django CI
+```
+Gives the workflow a name
+
+```
+on:
+  push:
+    branches: [ master ]
+  pull_request:
+    branches: [ master ]
+```
+states the trigers of the work flow and the context:
+- do this workflow on a "push" for the "master" branch
+- do this workflow on "pull_request" (befor the pull itself) for the "master" branch
+
+```
+jobs:
+  build: 
+```
+state a single job - "build" (in here we also test the app)
+
+
+```
+jobs:
+  build: 
+```
+state a single job - "build" (in here we also test the app)
+
+
+```
+  runs-on: ubuntu-latest 
+```
+tell the workflow environment to be the latest version ob ubuntu
+
+
+```
+ steps:
+    - uses: actions/checkout@v2
+```
+start a job steps list and tells it to use the "actions/checkout@v2" module
+
+
+```
+ - name: Set up Python 3.9
+      uses: actions/setup-python@v2
+      with:
+        python-version: 3.9
+    - name: Install Dependencies
+      run: |
+        python -m pip install --upgrade pip
+        pip install -r Django-cicd/requirements.txt
+```
+set up the python environment and install dependencies with [pip](https://pypi.org/project/pip/)
+
+
+```
+    - name: Run Tests
+      run: |
+        python Django-cicd/manage.py test app
+
+```
+run the tests using [Django](https://www.djangoproject.com/) built in test module.
+
+### if one of the steps fails for some reason you'll be notified
+
 

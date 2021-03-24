@@ -99,8 +99,8 @@ and do a pull-stage-commit-push to see the results:
 
 ## 14. Chillout have a drink and keep on coding!
 
-
-# Understanding the workflow
+<br/><br/><br/><br/>
+# Understanding the workflow YAML
 
 next is the explanation of the workflow yaml file statement by statement.
 

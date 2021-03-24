@@ -15,7 +15,7 @@
 
 
 
-## To do:
+## Getting Started:
 ### 1. Fork this example repository
 ### 2. Delete .github/workflows folder
 ### 3. Clone the repository to local machine

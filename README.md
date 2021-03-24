@@ -14,14 +14,14 @@
 
 
 
-
-## 1. Fork this example repository
-## 2. Delete .github/workflows folder
-## 3. Clone the repository to local machine
-## 4. Go to "Actions" in the repository Github
-## 5. Create a new workflow from scratch ("Manual workflow")
-## 6. Delete the contant of the yaml file
-## 7. Copy the content of this yaml file (will be explained later):
+## To do:
+### 1. Fork this example repository
+### 2. Delete .github/workflows folder
+### 3. Clone the repository to local machine
+### 4. Go to "Actions" in the repository Github
+### 5. Create a new workflow from scratch ("Manual workflow")
+### 6. Delete the contant of the yaml file
+### 7. Copy the content of this yaml file (will be explained later):
 
 ```
 name: Django CI

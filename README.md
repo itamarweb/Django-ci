@@ -11,6 +11,7 @@
 - Basic knowledge in GitHub and Git useage
 - Basic knowledge in YAML formmating 
 - GitHub Account
+- IDE with git client connected to the github account
 
 
 
@@ -52,4 +53,39 @@ jobs:
         python Django-cicd/manage.py test app
 ```
 
+### 8. Push the "Start commit" button (up right). You now have a basic workflow with tests.
+### 9. On your local machine preforme a "pull" request.
+### 10. Do a sample "Push" who faile the tests
+With your favorit IDE (after the local repository had been added) go to Django-cicd/app/tests.py and change:
+
+```
+    def test_about(self):
+        """Tests the about page."""
+        response = self.client.get('/about/')
+        self.assertContains(response, 'About', 3, 200)
+        #self.assertEqual('22222'.upper(), 'FOO')
+```
+
+to:
+
+```
+    def test_about(self):
+        """Tests the about page."""
+        response = self.client.get('/about/')
+        #self.assertContains(response, 'About', 3, 200)
+        self.assertEqual('22222'.upper(), 'FOO')
+```
+*we comment the "good" test and uncomment a sure-fail test
+
+### 11. Perform a stage and commit (give the commit a rememberable name like: "test 1"); then do a push
+### 12. See the results
+ - Go to the GitHub Actions section in the online repository
+ - Look under "X workflow runs" and see the last one that ran (shuold be with a white X in a red circle near it)
+ - click on it and then click on the box with "build" on it.
+ - Search the failuire reasone. It sould look lik this:
+ ![fail image from github](https://github.com/itamarweb/Django-ci/raw/master/FailTest.jpg) 
+ - 
+
+
+##
 
